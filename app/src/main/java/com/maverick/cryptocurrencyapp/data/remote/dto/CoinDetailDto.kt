@@ -1,6 +1,7 @@
 package com.maverick.cryptocurrencyapp.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
+import com.maverick.cryptocurrencyapp.domain.model.CoinDetail
 
 data class CoinDetailDto(
     val description: String,
@@ -41,3 +42,16 @@ data class CoinDetailDto(
     @SerializedName("whitepaper")
     val whitePaper: Whitepaper
 )
+
+fun CoinDetailDto.toCoinDetail(): CoinDetail {
+    return CoinDetail(
+        coinId = id,
+        name = name,
+        description = description,
+        symbol = symbol,
+        rank = rank,
+        isActive = isActive,
+        tags = tags.map { it.name },
+        team = team
+    )
+}
