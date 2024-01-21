@@ -1,6 +1,5 @@
 package com.maverick.cryptocurrencyapp.domain.model
 
-import com.maverick.cryptocurrencyapp.data.remote.dto.CoinDetailDto
 import com.maverick.cryptocurrencyapp.data.remote.dto.TeamMember
 
 data class CoinDetail(
